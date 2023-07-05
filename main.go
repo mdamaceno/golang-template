@@ -9,7 +9,6 @@ import (
 
 func main() {
     r := gin.New()
-    r.Static("/public", "./public")
     r.LoadHTMLGlob(filepath.Join("web", "resources", "views", "**", "*.html"))
 
     r = config.SetupDefaultMiddleware(r)
