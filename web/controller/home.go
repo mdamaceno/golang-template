@@ -8,7 +8,8 @@ import (
 
 func HomeIndex(r *gin.Engine) func(*gin.Context) {
     return func(c *gin.Context) {
-        view.SetupLayout(r, "home", "application")
+        view.SetView(r, "pages/home")
+
         c.HTML(200, "home.html", gin.H{
             "title": "Main website",
             "name": "John Doe",
