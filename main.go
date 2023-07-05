@@ -1,18 +1,9 @@
 package main
 
 import (
-    "github.com/gin-gonic/gin"
-
-    "app/config"
+    app "app/bootstrap"
 )
 
 func main() {
-    r := gin.New()
-
-    config.SetupAssets(r)
-    config.SetupLayouts(r)
-    config.SetupDefaultMiddleware(r)
-    config.SetupRoutes(r)
-
-    r.Run()
+    app.Serve()
 }
