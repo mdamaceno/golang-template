@@ -1,0 +1,15 @@
+{{ define "application.html" }}
+<html>
+    <head>
+        <title>Default page title</title>
+
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="navbar">...</div>
+        <div class="content">
+            {{block "content" .}} {{end}}
+        </div>
+    </body>
+</html>
+{{ end }}
