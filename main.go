@@ -9,10 +9,10 @@ import (
 func main() {
     r := gin.New()
 
-    r = config.SetupAssets(r)
-    r = config.SetupLayouts(r)
-    r = config.SetupDefaultMiddleware(r)
-    r = config.SetupRoutes(r)
+    config.SetupAssets(r)
+    config.SetupLayouts(r)
+    config.SetupDefaultMiddleware(r)
+    config.SetupRoutes(r)
 
     r.Run()
 }
