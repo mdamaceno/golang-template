@@ -6,8 +6,7 @@ import (
     "app/web/controller"
 )
 
-func SetupRoutes(r *gin.Engine) *gin.Engine {
-    r.GET("/", controller.HomeIndex(r))
-
-    return r
+func SetupRoutes(r *gin.Engine) {
+    r.GET("/", controller.HomeController(r, "index"))
+    r.GET("/users", controller.UsersController(r, "index"))
 }

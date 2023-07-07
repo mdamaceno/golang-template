@@ -2,17 +2,17 @@ package controller
 
 import (
     "github.com/gin-gonic/gin"
-
-    "app/web/view"
 )
 
-func HomeIndex(r *gin.Engine) func(*gin.Context) {
-    return func(c *gin.Context) {
-        view.SetView(r, "pages/home")
+func HomeController(r *gin.Engine, action string) func(c *gin.Context) {
+    return map[string]func(c *gin.Context) {
+        "index": homeIndex,
+    }[action]
+}
 
-        c.HTML(200, "home.html", gin.H{
-            "title": "Main website",
-            "name": "John Doe",
-        })
-    }
+func homeIndex(c *gin.Context) {
+    c.HTML(200, "home/index", gin.H{
+        "title": "Main website | Home",
+        "name": "John Doe",
+    })
 }
