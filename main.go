@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-    app.Serve()
+    app.Server().Run(":8080")
 }

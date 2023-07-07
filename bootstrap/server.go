@@ -7,7 +7,7 @@ import (
     "app/web/view"
 )
 
-func Serve() {
+func Server() *gin.Engine {
     r := gin.New()
     r.HTMLRender = view.SetViews()
 
@@ -16,7 +16,7 @@ func Serve() {
 
     web.SetupRoutes(r)
 
-    r.Run()
+    return r
 }
 
 func setupAssets(r *gin.Engine) {
