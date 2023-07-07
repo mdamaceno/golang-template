@@ -19,15 +19,11 @@ func Serve() {
     r.Run()
 }
 
-func setupAssets(r *gin.Engine) *gin.Engine {
+func setupAssets(r *gin.Engine) {
     r.Static("/public", "./public")
-
-    return r
 }
 
-func setupDefaultMiddleware(r *gin.Engine) *gin.Engine {
+func setupDefaultMiddleware(r *gin.Engine) {
     r.Use(gin.Logger())
     r.Use(gin.Recovery())
-
-    return r
 }
