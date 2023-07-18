@@ -28,6 +28,9 @@ func SetViews() Renderer {
 
     r.addFromFiles("home/index", defaultLayoutFile, viewsDir + "/home/index.html")
     r.addFromFiles("users/index", defaultLayoutFile, viewsDir + "/users/index.html")
+    r.addFromFiles("users/show", defaultLayoutFile, viewsDir + "/users/show.html")
+    r.addFromFiles("users/new", defaultLayoutFile, viewsDir + "/users/new.html")
+    r.addFromFiles("users/edit", defaultLayoutFile, viewsDir + "/users/edit.html")
 
     return r
 }
