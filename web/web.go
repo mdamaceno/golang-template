@@ -7,6 +7,6 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-    r.GET("/", controller.HomeController(r, "index"))
-    r.GET("/users", controller.UsersController(r, "index"))
+    r.GET("/", controller.HomeController["index"])
+    r.GET("/users", controller.UsersController["index"])
 }
